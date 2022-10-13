@@ -6,7 +6,7 @@ function KeywordInfo({keyword, colors}){
     const posts = keyword.posts.map((value, index) => <PostInfo post={value} colors={colors} key={index}/>)
     return (
         <div>
-            {keyword.keyword}
+            <span className='font-semibold capitalize italic'>{keyword.keyword}</span>
             {posts}
         </div>
     );

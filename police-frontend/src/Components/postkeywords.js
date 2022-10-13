@@ -4,8 +4,8 @@ function PostKeywords({keyword}){
 
 
     return (
-        <div>
-            {keyword.keyword}       
+        <div className='bg-black text-white mr-2 p-1 capitalize'>
+            {keyword.keyword}
         </div>
     );
 }

@@ -13,7 +13,11 @@ function PostSentiment({sentiment, colors}){
             colors: colors
         },
         colors: colors,
-        labels: ['positive', 'negative', 'neutral']
+        labels: ['positive', 'negative', 'neutral'],
+        dataLabels: {
+          enabled: false
+        },
+
       }
     let series = [sentiment.positive, sentiment.negative, sentiment.neutral]
 
@@ -28,7 +32,8 @@ function PostSentiment({sentiment, colors}){
                 series={series}
                 type='donut'
                 labels={labels}
-                width="500"
+                width="250"
+                
               />
             </div>
           </div>

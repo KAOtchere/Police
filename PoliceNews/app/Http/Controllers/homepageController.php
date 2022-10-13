@@ -39,7 +39,7 @@ class homepageController extends Controller
         $sentimentsPerMedia = DB::table('posts')
         ->selectRaw('media.medium as media, round(avg(positive),2) as positive, round(avg(negative),2) as negative, round(avg(neutral),2) as neutral')
         ->join('media', 'posts.media_id', '=', 'media.id')
-        ->groupBy('media.id')
+        ->groupBy('media.id', 'police.media.medium')
         ->get();
 
         $media = [];
@@ -65,7 +65,7 @@ class homepageController extends Controller
         $data = [$authorCount, $mediaCount, $keywordCount, $postCount];
         $stats = [];
 
-        array_push($stats, array('name'=>'Author', 'count'=> $authorCount));
+        array_push($stats, array('name'=>'Authors', 'count'=> $authorCount));
         array_push($stats, array('name'=>'Media', 'count'=> $mediaCount));
         array_push($stats, array('name'=>'Keywords', 'count'=> $keywordCount));
         array_push($stats, array('name'=>'Posts', 'count'=> $postCount));
@@ -78,8 +78,9 @@ class homepageController extends Controller
 
         $keydetails = keyword::whereIn('id', $popuKeyids)->
         with(['posts' => function($query){
-            return $query->take(5);
+            return $query->take(2);
         }])
+        ->limit(5)
         ->get();
 
 

@@ -1,4 +1,3 @@
-import Header from '../Components/LogHeader.component';
 import LoginForm from '../Components/LogForm.component';
 import api from '../Services/UserService';
 
@@ -6,8 +5,7 @@ import api from '../Services/UserService';
 
 function Login() {
     return (
-      <div className="Login">
-        <Header/>
+      <div className="flex justify-center bg-blue-700 h-screen">
         <LoginForm/>
       </div>
     );

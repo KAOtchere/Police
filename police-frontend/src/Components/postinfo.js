@@ -9,13 +9,13 @@ function PostInfo({post, colors}){
 
     return (
         <div>
-            {post.title}
-            {post.summary}
-            {post.publication_date}
-            {post.publication_name.name}
-            {post.media.medium}
-            {keywords}
-            {authors}
+            <h1>Title: {post.title}</h1>
+            <p>Summary: {post.summary}</p>
+            <span className='block'>Publication Date: {post.publication_date}</span>
+            <span className='block'>Publication: {post.publication_name.name}</span>
+            <span className='block'>Medium: {post.media.medium}</span>
+            <span className='block flex'>Keywords: {keywords}</span>
+            <span className='block'>{authors}</span>
             <PostSentiment sentiment={post} colors={colors}/>
             
         </div>

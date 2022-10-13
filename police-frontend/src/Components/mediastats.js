@@ -37,14 +37,13 @@ function MediaStats({mediaData, media, colors}){
     let series = mediaData
 
     return (
-        <div className="app">
+        <div className="bg-white my-10 p-10 rounded-lg drop-shadow-lg">
           <div className="row">
             <div className="mixed-chart">
               <Chart
                 options={options}
                 series={series}
                 type="bar"
-                width="500"
               />
             </div>
           </div>

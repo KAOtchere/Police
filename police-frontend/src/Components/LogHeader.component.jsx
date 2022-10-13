@@ -1,11 +1,11 @@
 import React from 'react';
 function Header() {
     return(
-        <nav>
-            <div>
-                <h3>Login</h3>
-            </div>
-        </nav>
+        
+        <div>
+            <h3 className='text-3xl font-bold text-center'>Login</h3>
+        </div>
+        
     )
 }
 export default Header;

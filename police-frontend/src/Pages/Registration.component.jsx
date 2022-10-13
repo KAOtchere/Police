@@ -5,8 +5,7 @@ import RegistrationForm from '../Components/RegForm.component';
 
 function Registration() {
     return (
-      <div className="Registration">
-        <Header/>
+      <div className="flex justify-center bg-blue-700 h-screen">
         <RegistrationForm/>
       </div>
     );
